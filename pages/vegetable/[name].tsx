@@ -2,13 +2,13 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 const name = () => {
-  const router = useRouter();
-  console.log(router);
-
+  const { query } = useRouter();
   return (
     <div>
-      <h2>Hello!</h2>
-      <Link href="/">Move to '/'</Link>
+      <h2>query name : {query.name}</h2>
+      <Link href="/">
+        <a>Move to '/'</a>
+      </Link>
     </div>
   );
 };
