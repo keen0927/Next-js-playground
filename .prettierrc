@@ -2,7 +2,7 @@
   "tabWidth": 2,
   "arrowParens": "avoid",
   "jsxSingleQuote": false,
-  "singleQuote": true,
+  "singleQuote": false,
   "semi": true,
   "htmlWhitespaceSensitivity": "css"
 }
