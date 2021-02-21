@@ -19,6 +19,7 @@ const App = () => {
 
   return (
     <React.Fragment>
+      <img src="/svg/vercel.svg" alt="" />
       <button type="button" onClick={handleMoveTomato}>
         이동 1
       </button>

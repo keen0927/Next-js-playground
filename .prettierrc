@@ -4,5 +4,6 @@
   "jsxSingleQuote": false,
   "singleQuote": false,
   "semi": true,
-  "htmlWhitespaceSensitivity": "css"
+  "htmlWhitespaceSensitivity": "css",
+  "trailingComma": "none"
 }
