@@ -13,9 +13,16 @@ export const getServerSideProps = async () => {
       props: {}
     };
   } catch (e) {
-    console.error(e);
+    console.log(e);
     return {
       props: {}
     };
   }
 };
+
+const apiTestRe = ({ user }) => {
+  const username = user && user.name;
+  return <div>{username}</div>;
+};
+
+export default apiTestRe;
