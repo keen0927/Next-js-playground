@@ -1,27 +1,27 @@
-import fetch from "isomorphic-unfetch";
-
-const name = ({ user }) => {
-  const userName = user && user.name;
-  return <div>{userName}</div>;
-};
-
 export const getServerSideProps = async ({ query }) => {
-  const { name } = query;
+  const { name, page } = query;
   try {
-    const res = await fetch(`https://api.github.com/users/${name}`);
-    if (res.status === 200) {
-      const user = await res.json();
-      return { props: { user } };
+    let user;
+    let repos;
+
+    const userRes = await fetch(`https://api.github.com/users/${name}`);
+    if (userRes.status === 200) {
+      user = await userRes.json();
     }
+    const repoRes = await fetch(
+      `https://api.github.com/users/${name}/repos?sort=updated&page=${page}&per_page=10`
+    );
+    if (repoRes.status === 200) {
+      repos = await repoRes.json();
+    }
+    console.log(repos);
     return {
-      props: {}
+      props: { user, repos }
     };
   } catch (e) {
-    console.error(e);
+    console.log(e);
     return {
       props: {}
     };
   }
 };
-
-export default name;

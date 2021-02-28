@@ -4,7 +4,8 @@ const staticPage = ({ time }) => {
 
 export const getStaticProps = async () => {
   return {
-    props: { time: new Date().toISOString() }
+    props: { time: new Date().toISOString() },
+    revalidate: 3
   };
 };
 
