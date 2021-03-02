@@ -3,7 +3,7 @@ import Header from "./header";
 const MyApp = ({ Component, pageProps }) => {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <Component {...pageProps} />
       <style jsx global>
         {`
